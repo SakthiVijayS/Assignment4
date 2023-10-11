@@ -4,9 +4,18 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import model.Patient;
 
 /**
  *
@@ -17,8 +26,11 @@ public class FormPanel extends javax.swing.JPanel {
     /**
      * Creates new form formPanel
      */
-    public FormPanel() {
+    private JPanel bottomPanel;
+    Patient tempPatient;
+    public FormPanel(JPanel inputPanel) {
         initComponents();
+        this.bottomPanel = inputPanel;
     }
 
     /**
@@ -238,18 +250,21 @@ public class FormPanel extends javax.swing.JPanel {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-
-        String fname= fnameField.getText();
+        Patient newPatient = new Patient();
+        newPatient.setFname(fnameField.getText());
+        String fname = newPatient.getFname();
         if (!fname.matches("^[a-zA-Z\\s]+$") || fname.isEmpty() || fname.length() > 50) {
             JOptionPane.showMessageDialog(this, "Please enter a valid First name( no numbers or special characters).", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        String lname= lnameField.getText();
+        newPatient.setLname(lnameField.getText());
+        String lname = newPatient.getLname();
         if (!lname.matches("^[a-zA-Z\\s]+$") || lname.isEmpty() || lname.length() > 50) {
             JOptionPane.showMessageDialog(this, "Please enter a valid Last name ( no numbers or special characters).", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        String age = ageField.getText();
+         newPatient.setAge(ageField.getText());
+         String age = newPatient.getAge();
         int tage = -1;
         try {
             tage = Integer.parseInt(age);
@@ -265,14 +280,16 @@ public class FormPanel extends javax.swing.JPanel {
         }catch (Exception ty) {
             JOptionPane.showMessageDialog(this, "Please select a Client Type (Guest or Customer).", "Validation Error", JOptionPane.ERROR_MESSAGE);
         }
-        String type= typeDropdown.getSelectedItem().toString();
+        newPatient.setType(typeDropdown.getSelectedItem().toString());
+        String type = newPatient.getType();
 
         try{
             String tgender = genderGroup.getSelection().getActionCommand();
         }catch(Exception x){
             JOptionPane.showMessageDialog(this, "Please select a gender.", "Validation Error", JOptionPane.ERROR_MESSAGE);
         }
-        String gender = genderGroup.getSelection().getActionCommand();
+        newPatient.setGender(genderGroup.getSelection().getActionCommand());
+        String gender = newPatient.getGender();
 
         boolean isEmailValid = false;
         try{
@@ -289,7 +306,24 @@ public class FormPanel extends javax.swing.JPanel {
             }} catch (IllegalArgumentException e) {
                 JOptionPane.showMessageDialog(this, "Enter a valid email", "Validation Error", JOptionPane.ERROR_MESSAGE);
                 return;}
-            String temail = emailField.getText();
+            newPatient.setTemail(emailField.getText());
+            String temail = newPatient.getTemail();
+            
+            try{
+            newPatient.profilePic = tempPatient.profilePic;
+            }catch (Exception ex)  {
+              JOptionPane.showMessageDialog(this, "Please enter correct details", "Error", HEIGHT);
+            }
+              ViewPanel newViewPanel = new ViewPanel(newPatient);
+        bottomPanel.add(newViewPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+        
+        
+        
+        
+        
+        
             System.out.println();
             JOptionPane.showMessageDialog(this, "First Name: " + fname + "\n" +
                 "Last Name: " + lname + "\n" +
@@ -306,7 +340,7 @@ public class FormPanel extends javax.swing.JPanel {
 
     private void uploadPhotoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadPhotoButtonActionPerformed
         // TODO add your handling code here:
-       // uploadPhoto();
+       tempPatient= uploadPhoto(tempPatient);
     }//GEN-LAST:event_uploadPhotoButtonActionPerformed
 
 
@@ -331,4 +365,26 @@ public class FormPanel extends javax.swing.JPanel {
     private javax.swing.JLabel typeLabel;
     private javax.swing.JButton uploadPhotoButton;
     // End of variables declaration//GEN-END:variables
+
+    public Patient uploadPhoto(Patient tempPatient) {
+         tempPatient = new Patient();
+     JFileChooser file = new JFileChooser();  
+    FileNameExtensionFilter filter = new FileNameExtensionFilter(
+        "JPG & GIF Images", "jpg", "gif");
+    file.setFileFilter(filter);
+    int returnVal = file.showOpenDialog(null);
+    if(returnVal == JFileChooser.APPROVE_OPTION) {
+       try{
+         BufferedImage img = ImageIO.read(file.getSelectedFile());
+         Image scaled      =  img.getScaledInstance(150,216, Image.SCALE_DEFAULT);
+        tempPatient.setProfilePic(new ImageIcon(scaled));
+    }                                        
+       catch(Exception ex){
+           JOptionPane.showMessageDialog(this, "Please upload valid image.", "Error - Invalid image", JOptionPane.ERROR_MESSAGE);
+                ex.printStackTrace();
+       }
+    } 
+    return tempPatient;
+       
+    }
 }
