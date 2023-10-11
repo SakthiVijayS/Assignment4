@@ -61,6 +61,8 @@ public class FormPanel extends javax.swing.JPanel {
         lnameLabel = new javax.swing.JLabel();
         lnameField = new javax.swing.JTextField();
         uploadPhotoButton = new javax.swing.JButton();
+        messageField = new javax.swing.JTextField();
+        messageLabel = new javax.swing.JLabel();
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 51));
 
@@ -83,7 +85,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderGroup.add(maleButton);
         maleButton.setText("Male");
-        maleButton.setActionCommand("MALE ");
+        maleButton.setActionCommand("MALE "); // NOI18N
         maleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maleButtonActionPerformed(evt);
@@ -92,7 +94,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderGroup.add(femaleButton);
         femaleButton.setText("Female");
-        femaleButton.setActionCommand("FEMALE ");
+        femaleButton.setActionCommand("FEMALE "); // NOI18N
         femaleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 femaleButtonActionPerformed(evt);
@@ -101,7 +103,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderGroup.add(nondiscloseButton);
         nondiscloseButton.setText("Rather Not Say");
-        nondiscloseButton.setActionCommand("UNDISCLOSED");
+        nondiscloseButton.setActionCommand("UNDISCLOSED"); // NOI18N
         nondiscloseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nondiscloseButtonActionPerformed(evt);
@@ -137,6 +139,8 @@ public class FormPanel extends javax.swing.JPanel {
             }
         });
 
+        messageLabel.setText("Message");
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -161,7 +165,7 @@ public class FormPanel extends javax.swing.JPanel {
                                     .addComponent(typeLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(genderLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(fnameLabel, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(typeDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +178,11 @@ public class FormPanel extends javax.swing.JPanel {
                                             .addComponent(femaleButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(nondiscloseButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGap(239, 239, 239))
+                .addGap(13, 13, 13)
+                .addComponent(messageLabel)
+                .addGap(41, 41, 41)
+                .addComponent(messageField, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,29 +194,33 @@ public class FormPanel extends javax.swing.JPanel {
                 .addGap(17, 17, 17)
                 .addComponent(titleLabel)
                 .addGap(38, 38, 38)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fnameLabel)
-                    .addComponent(fnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lnameLabel)
-                    .addComponent(lnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageLabel)
-                    .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(genderLabel)
-                    .addComponent(maleButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(femaleButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nondiscloseButton)
-                .addGap(40, 40, 40)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(typeDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(typeLabel))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fnameLabel)
+                            .addComponent(fnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(messageLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lnameLabel)
+                            .addComponent(lnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ageLabel)
+                            .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(genderLabel)
+                            .addComponent(maleButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(femaleButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nondiscloseButton)
+                        .addGap(40, 40, 40)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(typeDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(typeLabel)))
+                    .addComponent(messageField))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailLabel)
@@ -252,6 +264,8 @@ public class FormPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         Patient newPatient = new Patient();
         newPatient.setFname(fnameField.getText());
+        newPatient.setMessage(messageField.getText());
+        String message = newPatient.getMessage();
         String fname = newPatient.getFname();
         if (!fname.matches("^[a-zA-Z\\s]+$") || fname.isEmpty() || fname.length() > 50) {
             JOptionPane.showMessageDialog(this, "Please enter a valid First name( no numbers or special characters).", "Validation Error", JOptionPane.ERROR_MESSAGE);
@@ -358,6 +372,8 @@ public class FormPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lnameLabel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JRadioButton maleButton;
+    private javax.swing.JTextField messageField;
+    private javax.swing.JLabel messageLabel;
     private javax.swing.JRadioButton nondiscloseButton;
     private javax.swing.JButton submitButton;
     private javax.swing.JLabel titleLabel;

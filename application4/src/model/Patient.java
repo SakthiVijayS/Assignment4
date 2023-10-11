@@ -17,6 +17,15 @@ public class Patient {
     String type;
     String gender;
     String temail;
+    String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
     public ImageIcon profilePic;
 
     public ImageIcon getProfilePic() {

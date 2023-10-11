@@ -63,7 +63,7 @@
                                       <Component id="genderLabel" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
                                       <Component id="fnameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="136" max="32767" attributes="0"/>
+                                  <EmptySpace pref="134" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="typeDropdown" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
@@ -84,7 +84,11 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Component id="messageLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="messageField" min="-2" pref="135" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -99,33 +103,39 @@
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="fnameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lnameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ageField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="genderLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="maleButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="femaleButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="nondiscloseButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="typeDropdown" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="typeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="fnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="fnameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="messageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lnameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lnameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="ageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ageField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="genderLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="maleButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="femaleButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nondiscloseButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="typeDropdown" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="typeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="messageField" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -261,6 +271,13 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uploadPhotoButtonActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="messageField">
+        </Component>
+        <Component class="javax.swing.JLabel" name="messageLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Message"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
