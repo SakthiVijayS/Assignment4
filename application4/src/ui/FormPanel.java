@@ -85,7 +85,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderGroup.add(maleButton);
         maleButton.setText("Male");
-        maleButton.setActionCommand("MALE "); // NOI18N
+        maleButton.setActionCommand("MALE");
         maleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maleButtonActionPerformed(evt);
@@ -94,7 +94,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderGroup.add(femaleButton);
         femaleButton.setText("Female");
-        femaleButton.setActionCommand("FEMALE "); // NOI18N
+        femaleButton.setActionCommand("FEMALE");
         femaleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 femaleButtonActionPerformed(evt);
@@ -103,7 +103,7 @@ public class FormPanel extends javax.swing.JPanel {
 
         genderGroup.add(nondiscloseButton);
         nondiscloseButton.setText("Rather Not Say");
-        nondiscloseButton.setActionCommand("UNDISCLOSED"); // NOI18N
+        nondiscloseButton.setActionCommand("UNDISCLOSED");
         nondiscloseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nondiscloseButtonActionPerformed(evt);

@@ -275,14 +275,15 @@ public class ViewPanel extends javax.swing.JPanel {
         String mal = "MALE";
         String fem = "FEMALE";
         String ad = "UNDISCLOSED";
+        String gender = (String) newPatient.getGender();
         System.out.println("Gender:"+newPatient.getGender());
-         System.out.println(newPatient.getGender()+ " is of type " + newPatient.getGender().getClass().getSimpleName());  
-         System.out.println(newPatient.getGender().equals("MALE"));
+         System.out.println(gender+ " is of type " + newPatient.getGender().getClass().getSimpleName());  
+         System.out.println(gender.equals("MALE"));
          System.out.println(mal.equals("MALE"));
-        if(newPatient.getGender().toString().equalsIgnoreCase("MALE")){
+        if(gender.equalsIgnoreCase("MALE")){
             maleButton.setSelected(true);
         }
-        else if(newPatient.getGender().toString().equalsIgnoreCase("FEMALE")){
+        else if(gender.equalsIgnoreCase("FEMALE")){
            femaleButton.setSelected(true);
         }else{
            nondiscloseButton.setSelected(true);

@@ -190,7 +190,9 @@
               <ComponentRef name="genderGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Male"/>
-            <Property name="actionCommand" type="java.lang.String" value="MALE " noResource="true"/>
+            <Property name="actionCommand" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;MALE&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="maleButtonActionPerformed"/>
@@ -202,7 +204,9 @@
               <ComponentRef name="genderGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Female"/>
-            <Property name="actionCommand" type="java.lang.String" value="FEMALE " noResource="true"/>
+            <Property name="actionCommand" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;FEMALE&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="femaleButtonActionPerformed"/>
@@ -214,7 +218,9 @@
               <ComponentRef name="genderGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Rather Not Say"/>
-            <Property name="actionCommand" type="java.lang.String" value="UNDISCLOSED" noResource="true"/>
+            <Property name="actionCommand" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;UNDISCLOSED&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nondiscloseButtonActionPerformed"/>
