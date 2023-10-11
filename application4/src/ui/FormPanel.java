@@ -110,8 +110,7 @@ public class FormPanel extends javax.swing.JPanel {
             }
         });
 
-        typeDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer", "Guest" }));
-        typeDropdown.setSelectedIndex(-1);
+        typeDropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admitted", "Consulting" }));
 
         typeLabel.setText("Type");
 
